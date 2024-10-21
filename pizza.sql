@@ -8,7 +8,7 @@ SELECT
             ELSE "ROGCC" 
         END
     ) AS LANE,
-    deliverytype,
+    --deliverytype,
     COUNT(distinct partnerShipmentReference) AS All_Shipments,
     COUNT(distinct IF(Latest_status = "delivered", partnerShipmentReference, NULL)) AS Delivered_Shipments,
     COUNT(distinct IF(Latest_status IN ("returned", "return_in_transit", "return_confirmed", "ready_for_return", "cancelled_by_carrier", "cancelled", "missing"), partnerShipmentReference, NULL)) AS Returned_Shipments,
